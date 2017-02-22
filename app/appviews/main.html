@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  </head>
+
+  <body>
+    <div>
+      <h2>Home Page</h2>
+         <nav>
+      <a [routerLink]="['/Home']">Home</a>
+      <a [routerLink]="['/About']">About</a>
+    </nav>
+    <router-outlet></router-outlet>
+
+    </div>
+<add-post> </add-post>
+
+
+
+
+
+<div class="content">
+
+<div class="recent">
+<h2>Blog Posts</h2>
+<div class="post">
+<div class="comment" *ngFor="#post of posts">
+
+<div class="name">
+  {{post._id}}<br>
+  {{post.date}}<br>
+ {{post.category}}
+</div>
+
+<div class="article">
+  {{post.post}}
+</div>
+
+  <button (click)="clicked(post._id)">Click</button>
+
+
+  </div>
+
+</div>
+
+</div>
+
+
+<div class="cat"  *ngFor="#cat of cat" >
+<p> <a href="#">{{cat._id}}</a>({{cat.total}})</p>
+</div>
+
+</div>
+
+</body>
+  </html>
